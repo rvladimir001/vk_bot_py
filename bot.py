@@ -72,8 +72,8 @@ class Bot:
         if event.type != VkBotEventType.MESSAGE_NEW:
             log.info("Мы пока не умеем обрабатывать события такого типа %s", event.type)
             return
-        user_id = event.object['message']['peer_id']
-        text = event.object['message']['text']
+        user_id = event.object.peer_id
+        text = event.object.text
         if user_id in self.user_states:
             text_to_send = self.continue_scenario(user_id, text)
         else:

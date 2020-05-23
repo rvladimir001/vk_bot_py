@@ -20,7 +20,6 @@ def handle_name(text, context):
 
 def handle_email(text, context):
     matchs = re.findall(re_email, text)
-    print(matchs)
     if len(matchs) >= 1:
         context['email'] = matchs[0]
         return True
